@@ -12,8 +12,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - /var/local/dcm4chee-arc/ldap:/var/lib/ldap
-      - /var/local/dcm4chee-arc/slapd.d:/etc/ldap/slapd.d
+      - /var/local/dcm4chee-arc2/ldap:/var/lib/ldap
+      - /var/local/dcm4chee-arc2/slapd.d:/etc/ldap/slapd.d
   db:
     image: yishunxin/mysql-dcm4chee:5.7
     logging:
@@ -26,7 +26,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - /var/local/dcm4chee-arc/db:/var/lib/mysql
+      - /var/local/dcm4chee-arc2/db:/var/lib/mysql
   arc:
     image: yishunxin/dcm4chee-arc-light-5.13.0:latest
     logging:
@@ -49,5 +49,5 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - /var/local/dcm4chee-arc/wildfly:/opt/wildfly/standalone
-      - /var/local/dcm4chee-arc/storage:/storage
+      - /var/local/dcm4chee-arc2/wildfly:/opt/wildfly/standalone
+      - /var/local/dcm4chee-arc2/storage:/storage
